@@ -1,123 +1,123 @@
-Overview
+# Campus Database SQL Project
 
-This project demonstrates the design and implementation of a relational database for a campus/student management system.
-The database is created using MySQL and follows proper database design principles such as normalization, master–transaction separation, and many-to-many relationships.
+## Overview
+This repository contains a complete MySQL database design for a Campus / Student Management system.
+The project demonstrates proper database modeling using master tables, transaction tables, and many-to-many (M2M) tables.
 
-The goal of this project is to show:
-• Clear data modeling
-• Proper naming conventions
-• Use of master tables, transaction tables, and M2M tables
-• Practical SQL implementation
+The database is designed for academic learning and follows clean naming conventions and normalization principles.
 
-Database Details
+---
 
+## Database Information
 Database Name:
 campus
 
-The entire project uses one single schema (database) named campus.
+The entire project uses one single database (schema) named campus.
 
 Tables are logically divided into:
+- Master tables (reference data)
+- Transaction tables (operational data)
+- Many-to-Many (M2M) tables
 
-Master tables
+---
 
-Transaction (operational) tables
+## Naming Conventions
 
-Many-to-many (M2M) tables
+The following naming standards are used consistently:
 
-This separation is logical (by purpose), not physical.
+- tbl_cp_m*   → Master tables
+- tb_cp_*     → Transaction / core tables
+- tb_cp_m2m_* → Many-to-many relationship tables
 
-Naming Conventions Used
+Examples:
+- tbl_cp_mskills → Master skills table
+- tb_cp_student → Student core table
+- tb_cp_m2m_std_skill → Student–Skill M2M table
 
-All tables follow a strict naming convention:
+---
 
-• tbl_cp_m* → Master tables
-• tb_cp_* → Transaction / core tables
-• tb_cp_m2m_* → Many-to-many relationship tables
+## Master Tables
 
-Example:
-• tbl_cp_mskills → Master skills table
-• tb_cp_student → Core student table
-• tb_cp_m2m_std_skill → Student–Skill M2M table
-
-Master Tables
-
-Master tables store reference data that changes rarely and is reused across the system.
+Master tables store reference data that changes rarely and is shared across the system.
 
 Master tables included:
-• tbl_cp_msalutation
-• tbl_cp_mskills
-• tbl_cp_mlanguages
-• tbl_cp_mcolleges
-• tbl_cp_mcourses
-• tbl_cp_minterests
+- tbl_cp_msalutation
+- tbl_cp_mskills
+- tbl_cp_mlanguages
+- tbl_cp_mcolleges
+- tbl_cp_mcourses
+- tbl_cp_minterests
 
-These tables ensure data consistency and avoid duplication.
+---
 
-Transaction Tables
+## Transaction Tables
 
-Transaction tables store user-specific and frequently changing data.
+Transaction tables store student-specific and frequently changing data.
 
 Transaction tables included:
-• tb_cp_student
-• tb_cp_auth_credentials
-• tb_cp_password_history
-• tb_cp_student_contact
-• tb_cp_student_address
-• tb_cp_student_email
-• tb_cp_student_phone
-• tb_cp_student_education
-• tb_cp_student_workexp
-• tb_cp_job_preferences
-• tb_cp_student_school
+- tb_cp_student
+- tb_cp_auth_credentials
+- tb_cp_password_history
+- tb_cp_student_contact
+- tb_cp_student_address
+- tb_cp_student_email
+- tb_cp_student_phone
+- tb_cp_student_education
+- tb_cp_student_workexp
+- tb_cp_job_preferences
+- tb_cp_student_school
 
-These tables represent the core operational data of the system.
+---
 
-Many-to-Many (M2M) Tables
+## Many-to-Many (M2M) Tables
 
-Many-to-many tables are used where one student can relate to multiple records and vice versa.
+M2M tables represent relationships where multiple students can be linked to multiple records.
 
 M2M tables included:
-• tb_cp_m2m_std_skill
-• tb_cp_m2m_std_lng
-• tb_cp_m2m_std_interest
+- tb_cp_m2m_std_skill
+- tb_cp_m2m_std_lng
+- tb_cp_m2m_std_interest
 
-Each M2M table stores only the IDs of the related entities and follows a consistent naming pattern.
+Each M2M table stores only IDs and follows a strict naming pattern.
 
-Total Tables
+---
 
-Total number of tables in the database:
-20 tables
+## Total Tables
 
-• Master tables: 6
-• Transaction tables: 11
-• M2M tables: 3
+Total number of tables: 20
 
-SQL Files Content
+Master tables: 6
+Transaction tables: 11
+M2M tables: 3
 
-The SQL scripts in this project include:
-• Database creation (CREATE DATABASE campus)
-• Table creation statements for all tables
-• Mock data insertion for every table
-• SELECT queries to display data from all tables
+---
 
-How to Run the Project
+## SQL Scripts Included
 
-Open MySQL Workbench or any MySQL client
+This project contains SQL scripts for:
+- Creating the campus database
+- Creating all tables
+- Inserting mock/sample data into every table
+- SELECT queries to verify all tables
 
-Run the database and table creation SQL script
+---
 
-Run the mock data insertion SQL script
+## How to Run
 
-Use the provided SELECT queries to verify the data
+1. Open MySQL Workbench or any MySQL client
+2. Execute the database and table creation SQL
+3. Execute the mock data insertion SQL
+4. Run SELECT queries to verify data
 
-Testing
+---
 
-The project has been tested using:
-• SELECT * queries for all tables
-• Foreign key validation
-• Many-to-many relationship verification
+## Testing
 
-Successful execution of the SELECT queries confirms that:
-• Tables are created correctly
-• Data is inserted properly
-• Relationships are functioning as expected
+The database has been tested using:
+- SELECT queries on all tables
+- Foreign key validation
+- Many-to-many relationship verification
+
+---
+
+]

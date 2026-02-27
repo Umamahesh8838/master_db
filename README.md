@@ -242,11 +242,3 @@ SELECT * FROM tbl_cp_m2m_session_question_response;
 
 ---
 
-## Tech Stack
-
-| Component | Detail |
-|-----------|--------|
-| Database | MySQL 8.0+ |
-| Engine | InnoDB (default) |
-| Charset | Recommended: `utf8mb4` |
-| Collation | Recommended: `utf8mb4_unicode_ci` |
